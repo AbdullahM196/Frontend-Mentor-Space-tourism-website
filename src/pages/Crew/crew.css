@@ -1,0 +1,125 @@
+.crew {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0 165px;
+}
+.crewContent {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.crewLeftSide,
+.crewInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 140px;
+}
+.crewInfo {
+  gap: 32px;
+  height: 160px;
+}
+.role {
+  color: var(--lightBlue);
+  opacity: 0.5;
+}
+.crewBodyText {
+  max-width: 444px;
+}
+.crewRightSide {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.crew img {
+  max-width: 35.544rem;
+  max-height: 44.5rem;
+  object-fit: cover;
+}
+.crewNav {
+  display: flex;
+  gap: 24px;
+}
+.navCircle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--lightBlue);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 999;
+  opacity: 0.25;
+}
+.activeNavCircle {
+  background-color: var(--white);
+  opacity: 1;
+}
+@media only screen and (max-width: 1400px) {
+  .crew {
+    padding-right: 50px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .crew {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .crew {
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .crewContent {
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .crewContent aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .crewNav {
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 541px) {
+  .crew {
+    text-align: center;
+  }
+  .crewContent {
+    grid-template-rows: repeat(2, auto);
+  }
+  .crewLeftSide {
+    grid-row: 2/3;
+    flex-direction: column-reverse !important;
+  }
+  .crewLeftSide,
+  .crewInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .crewRightSide {
+    grid-row: 1/2;
+    border-bottom: 1px solid rgba(208, 214, 249, 0.15);
+    width: 90%;
+  }
+  .crewRightSide img {
+    width: 177.12px;
+    height: 222px;
+    object-fit: contain;
+  }
+}

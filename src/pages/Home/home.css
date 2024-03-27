@@ -1,0 +1,96 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 165px;
+  color: var(--white);
+  align-items: flex-end;
+  padding-bottom: 131px;
+}
+.home section {
+  justify-self: self-start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.home aside {
+  justify-self: flex-end;
+}
+.explore {
+  justify-self: center;
+  width: 274px;
+  height: 274px;
+  background-color: var(--white);
+  border-radius: 50%;
+  border: none;
+  color: var(--darkBlue);
+  position: relative;
+  cursor: pointer;
+}
+.explore::after {
+  content: "";
+  width: 0;
+  height: 0;
+
+  position: absolute;
+  background-color: var(--lightBlue);
+  top: -35px;
+  left: -35px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.explore:hover::after {
+  opacity: 0.25;
+  width: 125%;
+  height: 125%;
+}
+.homeBodyText {
+  max-width: 445px;
+}
+@media only screen and (max-width: 1100px) {
+  .home {
+    padding: 0 30px;
+    align-items: center;
+  }
+  .explore::after {
+    top: -30px;
+    left: -30px;
+  }
+  .explore:hover::after {
+    opacity: 0.25;
+    width: 120%;
+    height: 120%;
+  }
+  .home {
+    height: auto !important;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .home section {
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+  }
+  .home aside {
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 541px) {
+  .home {
+    height: 100% !important;
+  }
+  .explore {
+    width: 150px;
+    height: 150px;
+  }
+  .explore::after {
+    top: -15px;
+    left: -15px;
+  }
+}

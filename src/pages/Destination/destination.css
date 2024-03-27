@@ -1,0 +1,125 @@
+.destination {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  justify-content: center;
+  padding: 0 165px;
+}
+.destinationContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 112px;
+}
+
+.destinationNav {
+  width: 285.5px;
+  height: 34px;
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  line-height: 12px;
+}
+.destinationNavItems {
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.destinationNavItems::after,
+.active::after {
+  content: "";
+  height: 3px;
+  border-radius: 5px;
+  background-color: var(--white);
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 999;
+  opacity: 0;
+  width: 0;
+}
+.destinationNavItems:hover::after,
+.active::after {
+  opacity: 1;
+  width: 100%;
+}
+.destinationBodyText {
+  max-width: 444px;
+  min-height: 150px;
+}
+hr {
+  margin: 32px 0;
+  opacity: 0.25;
+  max-width: 444px;
+}
+.destinationText {
+  font-size: 28px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+.distance {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 62px;
+}
+@media only screen and (max-width: 1100px) {
+  .destination {
+    padding: 0 65px;
+  }
+}
+@media only screen and (max-width: 966px) {
+  .destination {
+    padding: 0 30px;
+  }
+  .destinationContent {
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 966px) {
+  .destinationContent {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 873px) {
+  .destinationContent {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .destinationContent aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 541px) {
+  .destination {
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  .destination > * {
+    text-align: center;
+    padding: 20px;
+  }
+  .destinationContent img {
+    width: 170px;
+    height: 170px;
+  }
+  .destinationBodyText {
+    min-height: 0;
+  }
+  .distance {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
